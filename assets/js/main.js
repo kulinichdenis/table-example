@@ -10,6 +10,7 @@
     {
       repo: 'js-lessons/js-basics-1',
       build: {
+        movax10: 'success',
         dimavetrov: 'failure',
         vorobey9: 'failure',
         kulinichdenis: 'success',
@@ -25,15 +26,20 @@
     },
     {
       repo: 'js-lessons/js-basics-2',
-      build:
-        { dennisreveni: 'success',
-          Alytar: 'failure',
-          dneprm: 'success',
-          Sazonova: 'success',
-          kulinichdenis: 'success',
-          KudryashovAV: 'success',
-          'dmitriy-kiriyenko': 'success',
-          MsSterh: 'failure'
+      build: {
+       asdhomer: 'success',
+       vorobey9: 'success',
+       dimavetrov: 'failure',
+       movax10: 'success',
+       lush81: 'success',
+       dennisreveni: 'success',
+       Alytar: 'failure',
+       dneprm: 'success',
+       Sazonova: 'success',
+       kulinichdenis: 'success',
+       KudryashovAV: 'success',
+       'dmitriy-kiriyenko': 'success',
+       MsSterh: 'failure'
       }
     },
     {
@@ -54,6 +60,7 @@
     }
   ];
 
+
   var students = [
     { Name: 'Douglas Crockford', Github: 'dimavetrov' },
     { Name: 'Tony Morris', Github: 'vorobey9' },
@@ -63,7 +70,8 @@
     { Name: 'Max Bolingbroke', Github: 'lush81' },
     { Name: 'Daniel Spiewak', Github: 'dneprm' },
     { Name: 'Rich Hickey', Github: 'Alytar' },
-    { Name: 'David Nolen', Github: 'dennisreveni' }
+    { Name: 'David Nolen', Github: 'dennisreveni' },
+    { Name: 'Martin Odersky', Github: 'movax10' }
   ]
 
   function githubBuild(repoName, githubResults) {
