@@ -90,8 +90,8 @@
     return results;
   }
 
-  function getResult(allResults, student, theme) {
-    switch(allResults[theme][student]) {
+  function getResult(allResults, student, topic) {
+    switch(allResults[topic][student]) {
       case 'success': return '\u2713';
       case 'failure': return '\u2717';
       default: return '-';
@@ -99,10 +99,12 @@
   }
 
   function addHomeWorkResults(students, homeWorks, githubResults) {
-    var allResults = homeworkResults(githubResults, homeWorks);
-    var getStudentResult = function(student, theme) {
-      return getResult(allResults, student, theme);
-    }
+    var getStudentResult = (function(allResults) {
+      return function(student, topic) {
+        return getResult(allResults, student, topic);
+      }
+    })(homeworkResults(githubResults, homeWorks));
+
     var student;
 
     for (var i = 0; i < students.length; i++) {
@@ -115,8 +117,9 @@
     return students;
   }
 
-  var rows = addHomeWorkResults(students, homeWorks, githubResults);
-  var studentsTable = new Table(objectToRows(rows)).draw();
+  addHomeWorkResults(students, homeWorks, githubResults);
+
+  var studentsTable = new Table(objectToRows(students)).draw();
 
   document.getElementById('students-list').innerHTML = studentsTable;
 })();
