@@ -10,6 +10,7 @@
     {
       repo: 'js-lessons/js-basics-1',
       build: {
+        movax10: 'success',
         dimavetrov: 'failure',
         vorobey9: 'failure',
         kulinichdenis: 'success',
@@ -25,15 +26,20 @@
     },
     {
       repo: 'js-lessons/js-basics-2',
-      build:
-        { dennisreveni: 'success',
-          Alytar: 'failure',
-          dneprm: 'success',
-          Sazonova: 'success',
-          kulinichdenis: 'success',
-          KudryashovAV: 'success',
-          'dmitriy-kiriyenko': 'success',
-          MsSterh: 'failure'
+      build: {
+       asdhomer: 'success',
+       vorobey9: 'success',
+       dimavetrov: 'failure',
+       movax10: 'success',
+       lush81: 'success',
+       dennisreveni: 'success',
+       Alytar: 'failure',
+       dneprm: 'success',
+       Sazonova: 'success',
+       kulinichdenis: 'success',
+       KudryashovAV: 'success',
+       'dmitriy-kiriyenko': 'success',
+       MsSterh: 'failure'
       }
     },
     {
