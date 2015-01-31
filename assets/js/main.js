@@ -69,8 +69,9 @@
     { Name: 'Max Bolingbroke', Github: 'lush81' },
     { Name: 'Daniel Spiewak', Github: 'dneprm' },
     { Name: 'Rich Hickey', Github: 'Alytar' },
-    { Name: 'David Nolen', Github: 'dennisreveni' }
-  ]
+    { Name: 'David Nolen', Github: 'dennisreveni' },
+    { Name: 'Martin Odersky', Github: 'movax10' }
+  ];
 
   var studentsTable = new Table(objectToRows(students)).draw();
 
