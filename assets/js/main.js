@@ -90,34 +90,33 @@
     return results;
   }
 
-  function getResult(student, theme) {
-    var results = homeworkResults(githubResults, homeWorks);
-
-    getResult = function(student, theme) {
-      switch(results[theme][student]) {
-        case 'success': return '\u2713';
-        case 'failure': return '\u2717';
-        default: return '-';
-      }
+  function getResult(allResults, student, theme) {
+    switch(allResults[theme][student]) {
+      case 'success': return '\u2713';
+      case 'failure': return '\u2717';
+      default: return '-';
     }
-
-    return getResult(student, theme);
   }
 
-  function addHomeWorkResults(students) {
+  function addHomeWorkResults(students, homeWorks, githubResults) {
+    var allResults = homeworkResults(githubResults, homeWorks);
+    var getStudentResult = function(student, theme) {
+      return getResult(allResults, student, theme);
+    }
     var student;
 
     for (var i = 0; i < students.length; i++) {
       student = students[i];
       for (var hw in homeWorks) {
-        student[hw] = getResult(student.Github, hw);
+        student[hw] = getStudentResult(student.Github, hw);
       }
     }
 
     return students;
   }
 
-  var studentsTable = new Table(objectToRows(addHomeWorkResults(students))).draw();
+  var rows = addHomeWorkResults(students, homeWorks, githubResults);
+  var studentsTable = new Table(objectToRows(rows)).draw();
 
   document.getElementById('students-list').innerHTML = studentsTable;
 })();
